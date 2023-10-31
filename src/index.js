@@ -1,5 +1,5 @@
 import { readFile } from 'node:fs/promises';
-import { basename } from 'node:path';
+import { basename, dirname, resolve } from 'node:path';
 
 const PREFIX = '\0bundle-native:';
 
@@ -11,8 +11,12 @@ export function bundleNative() {
   return {
     name: 'bundle-native',
 
-    resolveId(id) {
+    resolveId(id, importer) {
       if (id.endsWith('.node')) {
+        if (importer) {
+          id = resolve(dirname(importer), id);
+        }
+
         return PREFIX + id;
       }
     },
