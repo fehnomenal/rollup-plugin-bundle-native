@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@neon-rs/load':
+    specifier: '*'
+    version: 0.0.168
   magic-string:
     specifier: 0.30.5
     version: 0.30.5
@@ -27,6 +30,10 @@ packages:
 
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
+    dev: false
+
+  /@neon-rs/load@0.0.168:
+    resolution: {integrity: sha512-bjd/ZeUoJpafllhbOK50mW+qECR8cmNQzhOvKoq2h7DzXONIebLTU2Ux/QU38OnIiP/15F/comai9Oc1KgOGpQ==}
     dev: false
 
   /@rollup/rollup-android-arm-eabi@4.1.5:

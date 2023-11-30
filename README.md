@@ -16,10 +16,18 @@ Plugin that includes `.node` into the bundle as assets.
 import { bundleNative } from 'rollup-plugins/bundle-native';
 ```
 
-## rollup-plugin/esh-shim
+## rollup-plugins/esm-shim
 
 Plugin that inserts `__dirname`, `__filename` and `require` into files if these are used.
 
 ```js
 import { esmShim } from 'rollup-plugins/esm-shim';
+```
+
+## rollup-plugins/resolve-libsql
+
+Plugin to statically resolve the correct `@libsql/` native package instead of deferring to runtime resolving.
+
+```js
+import { resolveLibsql } from 'rollup-plugins/resolve-libsql';
 ```
