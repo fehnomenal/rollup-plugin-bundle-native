@@ -1,11 +1,11 @@
 {
-  "name": "rollup-plugin-bundle-native",
+  "name": "rollup-plugins",
   "version": "1.0.0",
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./src/index.js",
-      "types": "./src/index.d.ts"
+    "./bundle-native": {
+      "import": "./src/bundle-native/index.js",
+      "types": "./src/bundle-native/index.d.ts"
     }
   },
   "devDependencies": {

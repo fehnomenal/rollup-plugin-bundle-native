@@ -1,32 +1,17 @@
-# rollup-plugin-bundle-native
+# rollup-plugins
 
-Plugin for Rollup that includes `.node` into the bundle as assets.
-
-
-## Installation
+Collection of frequently used plugins for rollup.
 
 Install from GitHub:
 
 ```shell
-pnpm add -D fehnomenal/rollup-plugin-bundle-native
+pnpm add -D fehnomenal/rollup-plugins
 ```
 
+## rollup-plugins/bundle-native
 
-## Usage
+Plugin for Rollup that includes `.node` into the bundle as assets.
 
-Import and include into plugins array:
-
-````js
-// ...
-import { bundleNative } from 'rollup-plugin-bundle-native';
-
-// ...
-
-  plugins: [
-    // ...
-    bundleNative(),
-    // ...
-    ],
-
-// ...
-``
+```js
+import { bundleNative } from 'rollup-plugins/bundle-native';
+```
