@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugins",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
   "exports": {
     "./bundle-native": {
@@ -12,7 +12,8 @@
       "types": "./src/esm-shim/index.d.ts"
     },
     "./resolve-libsql": {
-      "import": "./src/resolve-libsql/index.js"
+      "import": "./src/resolve-libsql/index.js",
+      "types": "./src/resolve-libsql/index.d.ts"
     }
   },
   "dependencies": {

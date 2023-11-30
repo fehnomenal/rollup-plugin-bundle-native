@@ -1,7 +1,7 @@
 import { currentTarget } from '@neon-rs/load';
 import MagicString from 'magic-string';
 
-/** @returns {import('rollup').Plugin} */
+/** @type {import('.').resolveLibsql} */
 export function resolveLibsql() {
   const target = currentTarget();
 
