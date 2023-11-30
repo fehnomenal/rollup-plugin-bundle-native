@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  magic-string:
+    specifier: 0.30.5
+    version: 0.30.5
+
 devDependencies:
   '@types/node':
     specifier: 18.18.2
@@ -19,6 +24,10 @@ devDependencies:
     version: 5.2.2
 
 packages:
+
+  /@jridgewell/sourcemap-codec@1.4.15:
+    resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
+    dev: false
 
   /@rollup/rollup-android-arm-eabi@4.1.5:
     resolution: {integrity: sha512-/fwx6GS8cIbM2rTNyLMxjSCOegHywOdXO+kN9yFy018iCULcKZCyA3xvzw4bxyKbYfdSxQgdhbsl0egNcxerQw==}
@@ -127,6 +136,13 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /magic-string@0.30.5:
+    resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
+    dev: false
 
   /prettier@3.0.3:
     resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}

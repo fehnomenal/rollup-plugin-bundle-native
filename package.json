@@ -1,12 +1,19 @@
 {
   "name": "rollup-plugins",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "exports": {
     "./bundle-native": {
       "import": "./src/bundle-native/index.js",
       "types": "./src/bundle-native/index.d.ts"
+    },
+    "./esm-shim": {
+      "import": "./src/esm-shim/index.js",
+      "types": "./src/esm-shim/index.d.ts"
     }
+  },
+  "dependencies": {
+    "magic-string": "0.30.5"
   },
   "devDependencies": {
     "@types/node": "18.18.2",
