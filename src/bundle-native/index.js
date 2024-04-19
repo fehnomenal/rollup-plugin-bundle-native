@@ -6,10 +6,14 @@ const PREFIX = '\0bundle-native:';
 /** @type {import('.').bundleNative} */
 export function bundleNative() {
   /** @type {string[]} */
-  const nativeFileRefs = [];
+  let nativeFileRefs = [];
 
   return {
     name: 'bundle-native',
+
+    buildStart() {
+      nativeFileRefs = [];
+    },
 
     resolveId(id, importer) {
       if (id.endsWith('.node')) {
@@ -34,8 +38,7 @@ export function bundleNative() {
         return {
           code: [
             `import { createRequire } from 'node:module';`,
-            `const require = createRequire(import.meta.url);`,
-            `export default require(import.meta.ROLLUP_FILE_URL_${ref});`,
+            `export default createRequire(import.meta.url)(import.meta.ROLLUP_FILE_URL_${ref});`,
           ].join('\n'),
         };
       }
@@ -45,7 +48,11 @@ export function bundleNative() {
       order: 'pre',
       handler({ referenceId, relativePath }) {
         if (nativeFileRefs.includes(referenceId)) {
-          return JSON.stringify(`./${relativePath}`);
+          if (!relativePath.startsWith('.')) {
+            relativePath = `./${relativePath}`;
+          }
+
+          return JSON.stringify(relativePath);
         }
       },
     },
