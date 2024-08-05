@@ -5,7 +5,7 @@ Collection of frequently used plugins for rollup.
 Install from GitHub:
 
 ```shell
-pnpm add -D fehnomenal/rollup-plugins
+pnpm add -D 'github:fehnomenal/rollup-plugins#semver:v2.0.0'
 ```
 
 ## rollup-plugins/bundle-native

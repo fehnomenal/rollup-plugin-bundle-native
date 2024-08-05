@@ -17,9 +17,7 @@ export function resolveLibsql() {
       if (code.includes(finalRequire)) {
         const str = new MagicString(code);
 
-        str
-          .replaceAll(finalRequire, resolvedRequire)
-          .replaceAll(modernRequire, resolvedRequire);
+        str.replaceAll(finalRequire, resolvedRequire).replaceAll(modernRequire, resolvedRequire);
 
         return { code: str.toString(), map: str.generateMap() };
       }

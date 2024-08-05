@@ -2,7 +2,7 @@ import MagicString from 'magic-string';
 
 /** @type {import('.').esmShim} */
 export function esmShim() {
-  const requireRegex = /require\s*\(|require\s*.\s*resolve\s*\(/m;
+  const requireRegex = /require\s*(\.\s*resolve\s*)?\(/m;
 
   return {
     name: 'esm-shim',
@@ -32,10 +32,7 @@ export function esmShim() {
           const imports = Object.values(shims)
             .flatMap((code) => Object.keys(code))
             .sort()
-            .map(
-              (module) =>
-                `import __esm_shim__${module}__ from 'node:${module}';`,
-            )
+            .map((module) => `import __esm_shim__${module}__ from 'node:${module}';`)
             .join('\n');
 
           const assignments = Object.entries(shims)

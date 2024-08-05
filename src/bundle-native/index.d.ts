@@ -1,3 +1,3 @@
 import { Plugin } from 'rollup';
 
-export function bundleNative(): Plugin;
+export function bundleNative(): Plugin[];

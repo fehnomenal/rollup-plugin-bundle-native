@@ -1,10 +1,16 @@
 import { readFile } from 'node:fs/promises';
 import { basename, dirname, resolve } from 'node:path';
+import { esmShim } from '../esm-shim/index.js';
 
 const PREFIX = '\0bundle-native:';
 
 /** @type {import('.').bundleNative} */
 export function bundleNative() {
+  return [esmShim(), native()];
+}
+
+/** @returns {import('rollup').Plugin} */
+export function native() {
   /** @type {string[]} */
   let nativeFileRefs = [];
 
@@ -36,10 +42,7 @@ export function bundleNative() {
         nativeFileRefs.push(ref);
 
         return {
-          code: [
-            `import { createRequire } from 'node:module';`,
-            `export default createRequire(import.meta.url)(import.meta.ROLLUP_FILE_URL_${ref});`,
-          ].join('\n'),
+          code: `export default require(import.meta.ROLLUP_FILE_URL_${ref});`,
         };
       }
     },
