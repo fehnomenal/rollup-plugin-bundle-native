@@ -20,7 +20,7 @@
   "scripts": {
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "pnpm run build && changeset publish"
+    "release": "changeset publish"
   },
   "dependencies": {
     "magic-string": "0.30.5"
