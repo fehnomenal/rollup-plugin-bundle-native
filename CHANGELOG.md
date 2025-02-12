@@ -1,5 +1,11 @@
 # @fehnomenal/rollup-plugins
 
+## 2.0.3
+
+### Patch Changes
+
+- Fix the release workflow again _[`#6`](https://github.com/fehnomenal/rollup-plugins/pull/6) [`b3b0f3b`](https://github.com/fehnomenal/rollup-plugins/commit/b3b0f3b09c819cc084c7c6914734e62f2dc6bf6e) [@fehnomenal](https://github.com/fehnomenal)_
+
 ## 2.0.2
 
 ### Patch Changes
